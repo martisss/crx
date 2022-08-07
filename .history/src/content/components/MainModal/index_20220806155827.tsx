@@ -1,0 +1,25 @@
+import { Modal } from 'antd'
+import React, { ReactNode } from 'react'
+
+const MainModal = (props: {
+  children: ReactNode
+  visible: boolean
+  show: () => void
+}) => {
+  const { children, visible, show } = props
+  return (
+    <>
+      <Modal
+        style={{ top: 80, right: '0px'}}
+        visible={visible}
+        onOk={() => show()}
+        onCancel={() => show()}
+        width={1000}
+      >
+        {children}
+      </Modal>
+    </>
+  )
+}
+
+export default MainModal

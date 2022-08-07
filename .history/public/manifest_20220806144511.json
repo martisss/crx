@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "p-filter",
+  "version": "1.0.0",
+  "description": "Filter out the emergencies that concern you",
+  "icons": {
+    "16": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "images/icon.png",
+      "48": "images/icon.png",
+      "128": "images/icon.png"
+    },
+    "default_title": "test"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["static/js/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["storage", "declarativeContent"],
+  "web_accessible_resources": [
+    {
+      "resource"
+    }
+  ]
+}
